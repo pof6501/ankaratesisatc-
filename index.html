@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankara Su Tesisatçısı | Profesyonel & Hızlı Hizmet</title>
+    <!-- Font Awesome Icons (v6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0b3954 0%, #0a4d6b 100%);
+            color: white;
+            padding: 60px 0 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #f4f7fc;
+            transform: skewY(-3deg);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero .highlight {
+            color: #ffb347;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        /* Butonlar */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: none;
+            cursor: pointer;
+            min-width: 220px;
+        }
+
+        .btn i {
+            font-size: 1.4rem;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20B957;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-call {
+            background-color: #ff6b35;
+            color: white;
+        }
+
+        .btn-call:hover {
+            background-color: #e85a2a;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Hizmetler Bölümü */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            color: #0b3954;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ffb347;
+            border-radius: 2px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f8faff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(11, 57, 84, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0b3954;
+        }
+
+        .service-card p {
+            color: #5f6b7a;
+        }
+
+        /* Hakkımızda */
+        .about {
+            padding: 80px 0;
+            background: #f4f7fc;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1 1 400px;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            color: #0b3954;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-list i {
+            color: #ff6b35;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            flex: 1 1 300px;
+            background: linear-gradient(145deg, #0b3954, #1a5f7a);
+            border-radius: 30px;
+            padding: 40px 30px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 25px 40px rgba(11, 57, 84, 0.3);
+        }
+
+        .about-image i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: #ffb347;
+        }
+
+        .about-image h4 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .about-image p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* İletişim & Sabit Telefon Butonları */
+        .contact-sticky {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .sticky-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 2rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .sticky-wa {
+            background: #25D366;
+            color: white;
+        }
+
+        .sticky-call {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .sticky-btn:hover {
+            transform: scale(1.15);
+            border-color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #0b3954;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-phone {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: #ffb347;
+        }
+
+        .footer-phone i {
+            margin-right: 10px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .contact-sticky {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Sabit WhatsApp & Arama Butonları -->
+    <div class="contact-sticky">
+        <a href="https://wa.me/905303269779?text=Merhaba,%20su%20tesisatı%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." class="sticky-btn sticky-wa" target="_blank" title="Whatsapp'tan Yaz">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+905303269779" class="sticky-btn sticky-call" title="Hemen Ara">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Hero / Ana Başlık -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Ankara <span class="highlight">Su Tesisatçısı</span></h1>
+            <p>7/24 Acil servis, profesyonel ekip ve uygun fiyat garantisi. Su kaçağı, tıkanıklık, tamirat ve daha fazlası için hemen ulaşın.</p>
+            
+            <!-- Büyük Butonlar -->
+            <div class="cta-buttons">
+                <a href="https://wa.me/905303269779?text=Merhaba,%20su%20tesisatı%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Mesaj
+                </a>
+                <a href="tel:+905303269779" class="btn btn-call">
+                    <i class="fas fa-phone-alt"></i> Hemen Ara: 0530 326 97 79
+                </a>
+            </div>
+
+            <!-- Ekstra telefon bilgisi (metin olarak) -->
+            <div style="margin-top: 30px; font-size: 1.2rem; background: rgba(255,255,255,0.15); padding: 10px 25px; border-radius: 50px; display: inline-block;">
+                <i class="fas fa-phone"></i> 7/24 Ulaşılabilir: <strong>0530 326 97 79</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetler -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hizmetlerimiz</h2>
+                <p style="color: #5f6b7a; margin-top: 15px;">Ankara genelinde profesyonel tesisat çözümleri</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-water"></i></div>
+                    <h3>Su Kaçağı Tespiti</h3>
+                    <p>Kamera ve cihazlarla noktasal su kaçağı tespiti, kırmadan tamir.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-toilet"></i></div>
+                    <h3>Tıkanıklık Açma</h3>
+                    <p>Lavabo, tuvalet, gider tıkanıklıklarına robotlu ve kompresörlü çözüm.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>Tamir & Montaj</h3>
+                    <p>Batarya, musluk, rezervuar tamiri ve yeni tesisat montajı.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Kombi & Şofben</h3>
+                    <p>Kombi bakımı, şofben tamiri ve su ısıtıcı servisi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Bölümü -->
+    <section class="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h3>Profesyonel Tesisat Hizmeti</h3>
+                <p>Ankara'nın tüm ilçelerinde 15 yıllık deneyimle hizmetinizdeyiz. Müşteri memnuniyeti, hijyen ve iş güvenliği önceliğimizdir. Acil durumlarda en geç 30 dakika içinde kapınızdayız.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Uygun fiyat, kaliteli işçilik</li>
+                    <li><i class="fas fa-check-circle"></i> 7/24 acil servis</li>
+                    <li><i class="fas fa-check-circle"></i> Profesyonel ekipmanlar</li>
+                    <li><i class="fas fa-check-circle"></i> %100 müşteri memnuniyeti</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <i class="fas fa-tools"></i>
+                <h4>0530 326 97 79</h4>
+                <p>Hemen ara, sorununu hemen çözelim.</p>
+                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 25px;">
+                    <a href="https://wa.me/905303269779?text=Merhaba,%20su%20tesisatı%20için%20ulaşıyorum." style="background: #25D366; color: white; padding: 12px 20px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:+905303269779" style="background: #ffb347; color: #0b3954; padding: 12px 20px; border-radius: 30px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: bold;">
+                        <i class="fas fa-phone"></i> Ara
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim / Telefon Öne Çıkan -->
+    <section style="padding: 60px 0; background: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: #0b3954; font-size: 2rem; margin-bottom: 30px;">Hemen Randevu Al veya Bilgi Edin</h2>
+            <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px;">Acil durumlarda telefonla bize ulaşın, size en kısa sürede dönüş yapalım.</p>
+            
+            <!-- Sadece telefon numarası büyük gösterim -->
+            <div style="background: #0b3954; color: white; padding: 40px; border-radius: 60px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 35px rgba(11,57,84,0.3);">
+                <div style="font-size: 2.8rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 20px;">
+                    0530 326 97 79
+                </div>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:+905303269779" style="background: #ffb347; color: #0b3954; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-phone-alt"></i> Şimdi Ara
+                    </a>
+                    <a href="https://wa.me/905303269779?text=Merhaba,%20su%20tesisatı%20hakkında%20bilgi%20almak%20istiyorum." style="background: #25D366; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; display: flex; align-items: center; gap: 10px;" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz
+                    </a>
+                </div>
+                <p style="margin-top: 25px; font-size: 1rem; opacity: 0.8;"><i class="fas fa-clock"></i> 7 gün 24 saat hizmetinizdeyiz</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <i class="fas fa-wrench" style="font-size: 2.5rem; color: #ffb347; margin-bottom: 20px;"></i>
+            <h3 style="font-size: 1.8rem;">Ankara Su Tesisatçısı</h3>
+            <div class="footer-phone">
+                <i class="fas fa-phone"></i> 0530 326 97 79
+            </div>
+            <div style="display: flex; gap: 20px; justify-content: center; margin: 25px 0;">
+                <a href="https://wa.me/905303269779" style="color: white; font-size: 1.7rem;"><i class="fab fa-whatsapp"></i></a>
+                <a href="tel:+905303269779" style="color: white; font-size: 1.7rem;"><i class="fas fa-phone"></i></a>
+            </div>
+            <p>Çankaya, Keçiören, Yenimahalle, Altındağ ve tüm Ankara</p>
+            <p class="copyright">&copy; 2025 Ankara Su Tesisatçısı | Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Telefon numarası sabit tıklanabilir şekilde her yerde -->
+</body>
+</html>
